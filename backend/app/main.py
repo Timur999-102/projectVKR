@@ -8,7 +8,8 @@ app = FastAPI()
 def on_startup():
     init_db()
 
-app.include_router(supplier.router, prefix="/api")
+#app.include_router(supplier.router, prefix="/api")
+app.include_router(supplier.router, prefix="/suppliers", tags=["suppliers"])
 
 @app.get("/")
 def read_root():
